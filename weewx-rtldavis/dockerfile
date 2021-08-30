@@ -1,0 +1,15 @@
+FROM debian:10.10-slim
+
+RUN apt update && apt install -y python3 python3-pip unzip wget rtl-sdr librtlsdr0 \
+  && ln -s /usr/bin/python3 /usr/bin/python \
+  && ln -s /usr/bin/pip3 /usr/bin/pip \
+  && pip install configobj pillow pyusb pyserial cheetah3 paho-mqtt
+RUN wget https://weewx.com/downloads/weewx-4.5.1.tar.gz \
+  && wget https://github.com/lheijst/rtldavis/archive/refs/heads/master.zip \
+  && mkdir -p /opt/weewx && mkdir /opt/rtldavis \
+  && tar -xzf weewx-4.5.1.tar.gz --strip-components 1 -C /opt/weewx \
+  && unzip master.zip -d /opt/rtldavis
+
+COPY run.sh /
+RUN chmod +x /run.sh
+CMD ["/run.sh"]

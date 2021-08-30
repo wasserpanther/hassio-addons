@@ -1,0 +1,29 @@
+{
+    "name": "WeeWX + RTLDavis",
+    "version": "4.5.1-0.0.1",
+    "slug": "weewxrtldavis",
+    "description": "WeeWX with RTLDavis for Weather Logging",
+    "udev": true,
+    "arch": [
+        "amd64"
+    ],
+    "map": [
+        "ssl:r",
+        "weewx:rw"
+    ],
+    "ports": {
+        "4443/tcp": 4443
+    },
+    "options": {
+        "ssl": false,
+        "certfile": "fullchain.pem",
+        "keyfile": "privkey.pem",
+        "device": null
+    },
+    "schema": {
+        "ssl": "bool",
+        "certfile": "str",
+        "keyfile": "str",
+        "device": "device(subsystem=tty)"
+    } 
+}
