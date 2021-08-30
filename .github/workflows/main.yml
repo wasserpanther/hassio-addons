@@ -24,9 +24,5 @@ jobs:
         with:
           context: ./weewx-rtldavis
           file: ./weewx-rtldavis/dockerfile
-          tags: |
-            ${{ env.IMAGE }}:latest
-            ${{ env.IMAGE }}:${{ env.GIT_REF }}
-            ${{ env.IMAGE }}:${{ env.GIT_SHA }}
-            ${{ env.IMAGE }}:${{ env.BUILD_VER }}
+          tags: weewx-rtldavis:latest
           push: true
