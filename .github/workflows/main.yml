@@ -21,8 +21,3 @@ jobs:
           password: ${{ secrets.GIT_TOKEN }}
       - name: Build Container Image
         run: docker/build-push-action@v2
-        with:
-          context: ./weewx-rtldavis
-          file: ./weewx-rtldavis/dockerfile
-          tags: weewx-rtldavis:latest
-          push: true
