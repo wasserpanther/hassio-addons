@@ -2,7 +2,7 @@
     "name": "WeeWX + RTLDavis",
     "version": "4.5.1-0.0.1",
     "slug": "weewxrtldavis",
-    "image": "ghcr.io/wasserpanther/weewx-rtldavis:latest",
+    "image": "ghcr.io/wasserpanther/weewx-rtldavis",
     "description": "WeeWX with RTLDavis for Weather Logging",
     "udev": true,
     "devices": null,
