@@ -5,12 +5,13 @@
     "image": "ghcr.io/wasserpanther/weewx-rtldavis:latest",
     "description": "WeeWX with RTLDavis for Weather Logging",
     "udev": true,
+    "devices": null,
     "arch": [
         "amd64"
     ],
     "map": [
-        "ssl:ro",
-        "weewx:rw"
+        "ssl",
+        "config:rw"
     ],
     "ports": {
         "4443/tcp": 4443

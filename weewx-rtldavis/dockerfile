@@ -1,7 +1,5 @@
-FROM debian:10.10-slim
-
-# ARG BUILD_FROM
-# FROM $BUILD_FROM AS BUILD
+ARG BUILD_FROM
+FROM $BUILD_FROM AS BUILD
 
 RUN apt update && apt install -y python3 python3-pip unzip wget rtl-sdr librtlsdr0 \
   && ln -s /usr/bin/python3 /usr/bin/python \
@@ -13,6 +11,7 @@ RUN wget https://weewx.com/downloads/weewx-4.5.1.tar.gz \
   && tar -xzf weewx-4.5.1.tar.gz --strip-components 1 -C /opt/weewx \
   && unzip master.zip -d /opt/rtldavis
 
+WORKDIR /config
 COPY run.sh /
 RUN chmod +x /run.sh
 CMD ["/run.sh"]

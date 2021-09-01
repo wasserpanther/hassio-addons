@@ -1,5 +1,5 @@
 {
     "build_from": {
-        "amd64": "ghcr.io/home-assistant/amd64-base-debian:3.13"
+        "amd64": "debian:10.10-slim"
     } 
 }
