@@ -9,7 +9,7 @@
         "amd64"
     ],
     "map": [
-        "ssl:r",
+        "ssl:ro",
         "weewx:rw"
     ],
     "ports": {
